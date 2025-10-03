@@ -1,1 +1,323 @@
-# Oseguera0.Github.io
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="GenerationOne Forum — the official prelaunch community hub for creators and fans." />
+    <title>GenerationOne Forum — Official Community Hub</title>
+    <style>
+      :root {
+        --bg: #0b0f14;
+        --panel: #121823;
+        --panel-2: #0f141d;
+        --text: #e6edf3;
+        --muted: #a9b4c0;
+        --brand: #7c5cff;
+        --brand-2: #00d4ff;
+        --accent: #14e1a6;
+        --danger: #ff5c7a;
+        --warn: #ffbf47;
+        --radius: 14px;
+        --shadow: 0 10px 30px rgba(0,0,0,0.35);
+      }
+
+      * { box-sizing: border-box; }
+      html, body { height: 100%; }
+      body {
+        margin: 0;
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+        color: var(--text);
+        background: radial-gradient(1200px 600px at 20% -10%, rgba(124,92,255,0.18), transparent 60%),
+                    radial-gradient(1200px 600px at 80% -10%, rgba(0,212,255,0.14), transparent 60%),
+                    var(--bg);
+        line-height: 1.6;
+      }
+
+      .container {
+        width: min(1100px, 92vw);
+        margin: 0 auto;
+      }
+
+      header.hero {
+        position: relative;
+        padding: 64px 0 32px;
+        background: linear-gradient(180deg, rgba(124,92,255,0.1), rgba(0,0,0,0));
+        border-bottom: 1px solid rgba(124,92,255,0.2);
+      }
+
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 6px 10px;
+        font-weight: 600;
+        font-size: 12px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--brand-2);
+        background: rgba(0,212,255,0.08);
+        border: 1px solid rgba(0,212,255,0.25);
+        border-radius: 999px;
+      }
+
+      .hero h1 {
+        margin: 12px 0 12px;
+        font-size: clamp(34px, 4vw, 56px);
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+      }
+
+      .hero p.subtitle {
+        margin: 0 0 28px;
+        color: var(--muted);
+        font-size: clamp(16px, 2.3vw, 20px);
+      }
+
+      nav.quick {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin: 22px 0 2px;
+      }
+      nav.quick a {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 14px;
+        color: var(--text);
+        text-decoration: none;
+        background: linear-gradient(180deg, var(--panel), var(--panel-2));
+        border: 1px solid rgba(255,255,255,0.08);
+        border-radius: 10px;
+        box-shadow: var(--shadow);
+        transition: transform .15s ease, background .2s ease, border-color .2s ease;
+      }
+      nav.quick a:hover { transform: translateY(-1px); border-color: rgba(124,92,255,0.4); }
+
+      main { padding: 36px 0 72px; }
+
+      section {
+        margin: 26px 0;
+        padding: 22px;
+        background: linear-gradient(180deg, var(--panel), var(--panel-2));
+        border: 1px solid rgba(255,255,255,0.08);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+      }
+
+      section h2 {
+        margin: 0 0 6px;
+        font-size: clamp(22px, 3vw, 28px);
+        letter-spacing: -0.01em;
+      }
+
+      section p { margin: 10px 0 12px; }
+
+      .grid {
+        display: grid;
+        gap: 14px;
+      }
+      @media (min-width: 880px) {
+        .grid.cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        .grid.cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      }
+
+      .panel {
+        padding: 16px;
+        background: rgba(255,255,255,0.04);
+        border: 1px solid rgba(255,255,255,0.08);
+        border-radius: 12px;
+      }
+
+      ul, ol { padding-left: 18px; }
+      li + li { margin-top: 6px; }
+
+      .strike {
+        display: grid;
+        grid-template-columns: 110px 1fr;
+        gap: 12px;
+        align-items: start;
+      }
+      .strike .label {
+        font-weight: 700;
+        color: var(--warn);
+      }
+
+      .cta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 12px;
+      }
+      .button {
+        appearance: none;
+        border: none;
+        cursor: pointer;
+        padding: 12px 16px;
+        color: var(--text);
+        background: linear-gradient(180deg, var(--brand), #5a3bff);
+        border-radius: 12px;
+        box-shadow: var(--shadow);
+        text-decoration: none;
+        font-weight: 700;
+        transition: transform .15s ease, filter .2s ease;
+      }
+      .button.secondary { background: linear-gradient(180deg, #1a2332, #0f1623); font-weight: 600; }
+      .button:hover { transform: translateY(-1px); filter: saturate(1.1); }
+
+      footer {
+        margin: 40px 0 30px;
+        color: var(--muted);
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="hero">
+      <div class="container">
+        <span class="badge">Prelaunch Community Hub</span>
+        <h1>GenerationOne Forum</h1>
+        <p class="subtitle">The official community where future creators, fans, and innovators gather before the full launch of GenerationOne: The World’s First Competitive Video Arena.</p>
+        <nav class="quick" aria-label="Quick links">
+          <a href="#about">About</a>
+          <a href="#categories">Categories</a>
+          <a href="#contests">Mock Contests</a>
+          <a href="#festival">Festival Week</a>
+          <a href="#rewards">Rewards</a>
+          <a href="#moderation">Rules</a>
+          <a href="#culture">Culture</a>
+          <a href="#fans">Fans' Role</a>
+          <a href="#future">Future</a>
+          <a href="#get-started">Get Started</a>
+          <a href="#hall-of-fame">Hall of Fame</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <section id="about" aria-labelledby="about-title">
+        <h2 id="about-title">Welcome</h2>
+        <p>You're at the start of something that will grow into a movement. GenerationOne is more than a platform — it’s a culture and a new way for creators to test their skills, rise through challenges, and earn recognition on a global stage.</p>
+        <p>This forum is our prelaunch home base. For the first year, this is where the community lives, breathes, and shapes the foundation of GenerationOne. Every discussion, every mock contest, and every theory posted here pushes us closer to the grand launch — think of this place as the campfire before the stadium lights turn on.</p>
+      </section>
+
+      <section id="categories" aria-labelledby="categories-title">
+        <h2 id="categories-title">Forum Categories</h2>
+        <div class="grid cols-2">
+          <div class="panel">
+            <h3>Challenges &amp; Contests</h3>
+            <p>Where weekly mock competitions take place.</p>
+          </div>
+          <div class="panel">
+            <h3>Creator’s Corner</h3>
+            <p>Post your content, get feedback, and share growth tips.</p>
+          </div>
+          <div class="panel">
+            <h3>Theories &amp; Predictions</h3>
+            <p>Debate strategies, future formats, and who might rise as legends.</p>
+          </div>
+          <div class="panel">
+            <h3>Fan Zone</h3>
+            <p>General chat, memes, hype, and community bonding.</p>
+          </div>
+          <div class="panel">
+            <h3>News &amp; Announcements</h3>
+            <p>Official updates from the GenerationOne team.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="contests" aria-labelledby="contests-title">
+        <h2 id="contests-title">Weekly Mock Contests</h2>
+        <p>Each week, moderators post a Mock Contest Challenge — fun, low-stakes prompts like “Tell a story in 15 seconds” or “Your most suspenseful scene.” Creators submit entries by linking videos hosted on YouTube, TikTok, or Instagram. Fans vote, debate, and help decide the winners.</p>
+        <p>Mock contests serve two purposes: they give creators practice in a competitive environment, and they give fans a taste of what it’s like to follow and support their favorites. These are the training grounds for the main GenerationOne arena.</p>
+      </section>
+
+      <section id="hall-of-fame" aria-labelledby="hof-title">
+        <h2 id="hof-title">Forum Hall of Fame</h2>
+        <p>At the end of each mock contest, winners are announced and added to the Hall of Fame. These threads preserve the history of our earliest champions and ensure their names are remembered when the full platform launches.</p>
+        <div class="panel">
+          <p><em>Coming soon:</em> A showcase of weekly winners and Festival Champions.</p>
+        </div>
+      </section>
+
+      <section id="festival" aria-labelledby="festival-title">
+        <h2 id="festival-title">Monthly Mock Festival Week</h2>
+        <p>Once a month, winners of previous contests face off in a bigger, fan-driven showdown. Fans can cast votes, debate, and cheer for their champions in a final community poll. The winner earns the special title of <strong>Festival Champion</strong>.</p>
+      </section>
+
+      <section id="rewards" aria-labelledby="rewards-title">
+        <h2 id="rewards-title">Recognition &amp; Rewards</h2>
+        <p>Prizes at this stage are not monetary. Creators earn badges, profile titles, and recognition — rewards that matter because early champions will carry their achievements into the full GenerationOne launch. Your forum victories today help shape your reputation forever.</p>
+      </section>
+
+      <section id="moderation" aria-labelledby="moderation-title">
+        <h2 id="moderation-title">Rules &amp; Moderation</h2>
+        <p>We follow strict regulations and rules to keep the community safe and thriving. Every post, comment, and submission must comply with community standards. Offensive, harmful, or illegal content will be automatically flagged, removed, and investigated.</p>
+        <div class="grid">
+          <div class="panel">
+            <h3>3‑Strike Policy</h3>
+            <div class="strike">
+              <div class="label">First Strike</div>
+              <div>Warning and removal of the violating content.</div>
+              <div class="label">Second Strike</div>
+              <div>Temporary suspension from posting.</div>
+              <div class="label">Third Strike</div>
+              <div>Permanent account ban from the GenerationOne ecosystem.</div>
+            </div>
+          </div>
+          <div class="panel">
+            <h3>Hybrid Moderation</h3>
+            <p>Our automated system immediately flags content that violates rules (e.g., hate speech, spam, or inappropriate material). Human moderators then review flagged posts to confirm decisions. This hybrid approach keeps the community fair and safe.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="culture" aria-labelledby="culture-title">
+        <h2 id="culture-title">Constructive Culture</h2>
+        <p>The GenerationOne Forum thrives on constructive engagement. Criticism is welcome, but it must be respectful and aimed at helping others improve. Today’s beginners could be tomorrow’s legends — and you may be watching them rise right here.</p>
+      </section>
+
+      <section id="fans" aria-labelledby="fans-title">
+        <h2 id="fans-title">Fans Are Kingmakers</h2>
+        <p>Fans have just as much power here as creators. By voting, sharing theories, and fueling discussions, fans shape the narrative. Creators compete — but fans amplify voices and help decide who becomes great.</p>
+      </section>
+
+      <section id="future" aria-labelledby="future-title">
+        <h2 id="future-title">From Forum to Forever</h2>
+        <p>While the forum is the prelaunch hub, it is also a permanent feature of GenerationOne. When the full platform launches, this forum will evolve into the Community Tab of GenerationOne itself. Your account, your posts, and your achievements will carry over seamlessly.</p>
+        <p>Nothing here is temporary. Your posts, contest victories, theories, and friendships will follow you into the main site. GenerationOne remembers its founders.</p>
+      </section>
+
+      <section id="get-started" aria-labelledby="get-started-title">
+        <h2 id="get-started-title">Get Started</h2>
+        <ul>
+          <li>Join the <strong>weekly mock contests</strong>.</li>
+          <li><strong>Vote</strong> and comment on entries to shape outcomes.</li>
+          <li>Share your best tips in <strong>Creator’s Corner</strong>.</li>
+          <li>Debate predictions in <strong>Theories &amp; Predictions</strong>.</li>
+          <li>Bring the energy into <strong>Fan Zone</strong> — memes, hype, and fun keep the fire alive.</li>
+        </ul>
+        <div class="cta">
+          <a class="button" href="#contests">Enter a Mock Contest</a>
+          <a class="button secondary" href="#categories">Explore Categories</a>
+        </div>
+      </section>
+
+      <section id="founders" aria-labelledby="founders-title">
+        <h2 id="founders-title">You Are a Founder</h2>
+        <p>This is the start of something historic. When people look back at GenerationOne years from now, this forum will be remembered as the place where the movement began. If you’re here now, you’re not just a member — you’re a founder. Sharpen your skills, raise your voice, and prepare for what’s coming. The countdown has begun. The future of competitive entertainment starts here — and you are officially part of it.</p>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <small>© <span id="year"></span> GenerationOne Forum · Prelaunch Community</small>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
